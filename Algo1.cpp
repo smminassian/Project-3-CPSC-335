@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int maxCharm(int *Warr, int *NArr, int n, int w){
+int maxCharm(int *Warr, int *itemArr, int n, int w){
     
 
 }
@@ -16,8 +16,8 @@ int main(){
     cout << "Enter total mass of Bracelet: " << endl;
     cin >> W;
 
-    int *WArr = new int[W];
-    int *NArr = new int[n];
+    int *WArr = new int[n];
+    int *itemArr = new int[n];
 
     int val = 0;
 
@@ -32,7 +32,7 @@ int main(){
     for (int ix = 0; ix < n; ix++)
     {
         cin >> val2;
-        NArr[ix] = val2;
+        itemArr[ix] = val2;
     }
 
 }
