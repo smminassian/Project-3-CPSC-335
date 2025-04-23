@@ -2,7 +2,12 @@
 using namespace std;
 
 int maxCharm(int *Warr, int *itemArr, int n, int w){
-    
+    int *dp = new int[w + 1];
+    for (int kx = 0; kx <= w+1; kx++)
+    {
+        dp[kx] = 0;
+    }
+    for (int ix = 0; ix )
 
 }
 
@@ -29,10 +34,10 @@ int main(){
     }
     cout << "Enter the charm value of each bead type: " << endl;
     int val2 = 0;
-    for (int ix = 0; ix < n; ix++)
+    for (int jx = 0; jx < n; jx++)
     {
         cin >> val2;
-        itemArr[ix] = val2;
+        itemArr[jx] = val2;
     }
 
 }
