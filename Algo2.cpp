@@ -7,32 +7,29 @@ int Wine(int *values, int days)
 
     int difference = 0;
     int max = 0;
-    int noSell = values[0];
-    int noBottle = values[days - 1];
-    for (int jx = 1; jx < days - 1; jx++)
+    int noSell = values[0];  //I set the first value to noSell because you cant sell on first day
+    int noBottle = values[days - 1]; // I set the last day as noBottle because you cant prep on the last day
+    for (int jx = 1; jx <= days; jx++)   // I loop through the days 
     {
         if(jx == 1){
-            if (values[jx] - noSell > 0)
+            if (values[jx] - noSell > 0)      //So if there is appreciation from the first day to the second day, I will see it because im checking the difference. 
             {
                 difference = values[jx] - noSell;
-                max = values[jx];
-                cout << "Difference is : " << difference << endl;
+                max = values[jx];               //I record the max for that difference
             }
         }
-            else if (jx == days - 1)
+            else if (jx == days)
             {
-                if (values[jx] - noBottle > 0)
+                if (noBottle - values[jx - 1] > 0)  //if there is appreciation on the last day, I 
                 {
-                    difference = values[jx] - noBottle;
-                    max = values[jx];
-                    cout << "Difference is : " << difference << endl;
+                    difference = noBottle - values[jx - 1]; //I check the difference between the last day and the second to last day
+                    max = noBottle;   //i record the max for that difference
                 }
             }
-            else if (values[jx] - values[jx - 1] > difference)
+            else if (values[jx] - values[jx - 1] > difference) // if the day is not no bottle nor no sell then im just checking the other days too see if there is a increase
             {
-                difference = values[jx] - values[jx - 1];
+                difference = values[jx] - values[jx - 1]; 
                 max = values[jx];
-                cout << "Difference is : " << difference << endl;
             }
         }
     
